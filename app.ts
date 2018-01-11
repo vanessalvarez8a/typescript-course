@@ -53,3 +53,51 @@ function multiply(num1: number, num2: number): number { //end result be a number
 
 console.log(multiply(2, 4));
 // console.log(multiply(2, "hi")) would throw and error since hi is a string and num2 should be a number
+
+
+// function types 
+// we can set the type of a function to only receive functions that would return something and that also have parameters
+let myMultiply: (val1: number, val2: number) => number;
+/* ^ to set up the function type we use parenthesis 
+    THIS IS NOT A FUNCTION I WONT BE ABLE TO EXECUTE IT
+    It indicates which functions this variable would be able to hold */
+myMultiply = multiply;
+console.log(myMultiply(3, 2));
+
+
+// Object types
+let userData: {name: string, age: number} = {
+    name: "Vanessa",
+    age: 39
+}
+
+
+// complex object
+let complex: {data: number[], output: (all: boolean) => number[] } = {
+    /* ^ object that would have data and output property and names should match
+        the data property should be an array of numbers and the output property is a function
+        where there is only 1 argument with the name of all and the type is boolean and should 
+        give back => an array of numbers[]
+    */
+    data: [100, 98, 45],
+    output: function(all: boolean): number[] {
+        return this.data
+    }
+}
+
+// in the case of wanting to reuse a type theres 
+// type alias
+type Complex = {data: number[], output: (all: boolean) => number[] };
+// Complex is the name of the type alias
+
+let complex2: Complex = {
+    data: [100, 98, 45],
+    output: function(all: boolean): number[] {
+        return this.data
+    }
+}
+
+// union types 
+let myRealRealAge: number | string = 27;
+// ^ means it could only be a number or a string nothing else
+myRealRealAge = "27";
