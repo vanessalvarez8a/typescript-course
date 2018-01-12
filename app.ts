@@ -7,7 +7,7 @@ myRealAge = '34';
 let hobbies: any[] = ["rowing", "coding"];
 hobbies = [50];
 
-//tupples are arrays with mixed types and a limited number of items
+//tuples are arrays with mixed types and a limited number of items
 // the order were the tuples are set in the array are important most match
 let address: [string, number] = ["Superstreet", 99];
 
@@ -99,5 +99,19 @@ let complex2: Complex = {
 
 // union types 
 let myRealRealAge: number | string = 27;
-// ^ means it could only be a number or a string nothing else
+// ^ means it could only be a number OR | a string nothing else
 myRealRealAge = "27";
+
+
+//check types of a variable 
+let finalValue = 30;
+if(typeof finalValue == 'number') {
+    console.log('Final Value it is a number');
+    
+}
+
+
+//never - never contains no value, and void contains a single value not to be confused
+function neverReturns():never {
+    throw new Error('An Error!');
+}
