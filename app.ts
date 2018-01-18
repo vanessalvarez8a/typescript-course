@@ -115,3 +115,65 @@ if(typeof finalValue == 'number') {
 function neverReturns():never {
     throw new Error('An Error!');
 }
+
+
+
+
+
+// Arrow Function 
+const multiplyNumbers = (number1: number, number2: number) => number1 * number2;
+console.log(multiplyNumbers(4,4));
+
+// with no arguments
+const greet = () => {
+    console.log("Hi all"); 
+}
+
+greet();
+
+// Default Parameters 
+const countdown = (start: number = 10): void => { 
+    //countdown is going to take a parameter that would be a number and the default would be 10 and the function wont return nothing void
+    while(start > 0) {
+        start--;
+    }
+    console.log("DONE", start);
+}
+
+countdown(); // in the case that we want to override the default parameter would look like this countdown(20);
+
+
+// REST and Spread
+// they allow you to work with arrays 
+
+//Spreads out an array into single values
+const arrayOfNumbers = [2, 34, 55, 200];
+console.log(Math.max(...arrayOfNumbers)); //this function call way we can pass the variable as a parameter to the math max function and we can get the highest value
+
+
+// Rest 
+function makeArray(name: string, ...args: number[]) { //whatever is passing multiple arguments, turn it into an array of numbers
+    return args;
+}
+
+console.log(makeArray("Vane", 3, 9, 30, 2));
+
+
+// Desctructuring 
+const myHobbies = ['rowing', 'painting'];
+const [hobbie1, hobbie2] = myHobbies;
+console.log(hobbie1, hobbie2);
+
+
+const dogData = {dogName: 'drogba', dogType: 'mutt'};
+const {dogName: myDogName, dogType: myDogType} = dogData;
+console.log(myDogName, myDogType);
+
+//Template Literals
+const userName = "Fabian";
+const greeting = `This is a heading!
+Im ${userName}.
+This is cool!
+`
+console.log(greeting);
+
